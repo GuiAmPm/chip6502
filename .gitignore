@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/packages
+/Chip6502.Decoder/bin
+/Chip6502.Decoder/obj
+/Chip6502.Emulator/bin
+/Chip6502.Emulator/obj
+/Chip6502.Emulator.Tests/bin
+/Chip6502.Emulator.Tests/obj
+/Chip6502.Visualizer/bin
+/Chip6502.Visualizer/obj
