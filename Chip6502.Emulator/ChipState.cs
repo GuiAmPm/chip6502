@@ -19,6 +19,7 @@ namespace Chip6502.Emulator
                          STACK_SIZE = STACK_ADDR_END - STACK_ADDR_START;
 
         private int flags = MASK_RESERVED_BIT | MASK_BREAK;
+        private int sp = STACK_SIZE;
 
         // Flags
         public int Flags
@@ -108,7 +109,11 @@ namespace Chip6502.Emulator
 
         public int PC { get; set; }
 
-        public int SP { get; set; } = STACK_SIZE;
+        public int SP 
+        { 
+            get => sp;
+            set => sp = value & 0xFF;
+        }
 
         public int EllapsedCycles { get; set; }
 
@@ -141,12 +146,12 @@ namespace Chip6502.Emulator
 
         public void RegisterPush()
         {
-            SP = (SP - 1) & 0xFF;
+            SP = (SP - 1);
         }
 
         public void RegisterPull()
         {
-            SP = (SP + 1) & 0xFF;
+            SP = (SP + 1);
         }
 
         public override string ToString()
